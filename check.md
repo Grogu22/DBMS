@@ -1,4 +1,4 @@
-## Check Contstraint
+## Check Constraint
 A check constraint allows you to specify a condition on each row in a table.\
 Note : 
 - A check constraint can NOT be defined on a SQL View.
@@ -57,3 +57,39 @@ ADD CONSTRAINT check_supplier_name
   CHECK (supplier_name IN ('IBM', 'Microsoft', 'NVIDIA'));
 ```
 In this example, we've created a check constraint on the existing suppliers table called ```check_supplier_name```. It ensures that the ```supplier_name``` field only contains the following values: **IBM**, **Microsoft**, or **NVIDIA**.
+### Drop a Check Constraint
+The syntax for dropping a check constraint is:
+```
+ALTER TABLE table_name
+DROP CONSTRAINT constraint_name;
+```
+#### Example
+```
+ALTER TABLE suppliers
+DROP CONSTRAINT check_supplier_id;
+```
+In this example, we're dropping a check constraint on the suppliers table called check_supplier_id.
+### Enable a Check Constraint
+The syntax for enabling a check constraint in Oracle is:
+```
+ALTER TABLE table_name
+ENABLE CONSTRAINT constraint_name;
+```
+#### Example
+```
+ALTER TABLE suppliers
+ENABLE CONSTRAINT check_supplier_id;
+```
+In this example, we're enabling a check constraint on the suppliers table called check_supplier_id.
+### Disable a Check Constraint
+The syntax for disabling a check constraint in Oracle is:
+```
+ALTER TABLE table_name
+DISABLE CONSTRAINT constraint_name;
+```
+#### Example
+```
+ALTER TABLE suppliers
+DISABLE CONSTRAINT check_supplier_id;
+```
+In this example, we're disabling a check constraint on the suppliers table called check_supplier_id.
